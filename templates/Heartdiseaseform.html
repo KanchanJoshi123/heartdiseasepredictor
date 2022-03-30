@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Heart Disease Predictor</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="../static/StyleHTML.css?1422585377" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-dark navbar-fixed-top">
+	 	<div class="container-fluid">
+	 	   <div class="navbar-header">
+                    <a href="index.php" class="navbar-brand" style="height: 80px;"><img src="../static/logo.jpg" style="margin-top: -15px; width:120px;height:80px; margin-left: -15px;"></a> 
+                </div>
+		</div>
+	</nav>
+	<br><br><br><br>
+<!-- navbar end -->
+<div class="container">
+    <form action="{{ url_for('predict')}}"method="POST">
+	<div class="panel">
+	<div class="panel-heading heading">
+		HEART DISEASE PREDICTOR
+	</div>
+	<div class="panel-body" style="margin: 30px;">
+	<div class="row">
+    <div class="col-lg-4">
+    <label for="age">Age</label>
+    <input type="number" class="form-control" id="age" name="age" placeholder="Enter age" required>
+    </div>
+    <div class="col-lg-4">
+    <label for="gender">Gender</label><br>
+    <select name="gender" id="gender" style="width: 100%; height: 34px;" required>
+  <option value="Female">Female</option>
+  <option value="Male">Male</option>
+</select>
+	</div>
+    <div class="col-lg-4">
+    <label for="cp">Chest pain type</label>
+    <select name="cp" id="cp" style="width: 100%; height: 34px;" required>
+  <option value="TA">Typical Angina</option>
+  <option value="AA">Atypical Angina</option>
+   <option value="NAP">Non-anginal Pain</option>
+  <option value="A">Asymptomatic</option>
+</select>
+    </div>
+</div><br>
+	<div class="row">
+    <div class="col-lg-4">
+    <label for="trestbps">Resting Blood Pressure</label>
+    <input type="text" class="form-control" id="trestbps" name="trestbps" placeholder="Range[94-200] mmHg" required>
+    </div>
+    <div class="col-lg-4">
+    <label for="cholestrol">Cholestrol</label>
+    <input type="text" class="form-control" id="cholestrol" name="cholestrol" placeholder="Range[126-154] mg/dl" required>
+    </div>
+    <div class="col-lg-4">
+    <label for="fbs">Fasting Blood Sugar</label>
+    <select name="fbs" id="fbs" style="width: 100%; height: 34px;" required>
+  <option value="g">Greater than 120 mg/dl</option>
+  <option value="l">Less than 120 mg/dl</option>
+</select>
+    </div>
+	</div><br>
+	<div class="row">
+	<div class="col-lg-4">
+    <label for="restecg">Resting ECG Result</label>
+   <select name="restecg" id="restecg" style="width: 100%; height: 34px;" required>
+  <option value="n">Normal</option>
+  <option value="st">Having ST-T wave abnormality</option>
+  <option value="vh">Probable or definite left ventricular hypertrophy</option>
+</select>
+</div>
+    <div class="col-lg-4">
+    <label for="thalach">Thalach (Max Heart Rate)</label>
+    <input type="text" class="form-control" id="thalach" name="thalach" placeholder="Range[71-202] bpm" required>
+    </div>
+    <div class="col-lg-4">
+     <label for="exang">Exercise Induced Angina</label>
+        <select name="exang" id="exang" style="width: 100%; height: 34px;" required>
+        <option value="y">Yes</option>
+        <option value="n">No</option>
+        </select>
+    </div>
+	</div><br>
+	<div class="row">
+    <div class="col-lg-4">
+    <label for="oldpeak">Old Peak</label>
+    <input type="text" class="form-control" id="oldpeak" name="old peak" placeholder="Range:[0-6.2]" required>
+    </div>
+    <div class="col-lg-4">
+    <label for="slope">Slope of the peak exercise ST segment</label>
+    <select name="slope" id="slope" style="width: 100%; height: 34px;" required>
+  <option value="us">Up sloping</option>
+  <option value="fl">Flat</option>
+  <option value="dn">Down sloping</option>
+</select>
+    </div>
+    <div class="col-lg-4">
+    <label for="ca">CA</label>
+    <input type="text" class="form-control" id="ca" name="ca" placeholder="Range:[0-4]" required>
+    </div>
+	</div><br>
+	<div class="row">
+	<div class="col-lg-4">
+    <label for="thal">Thalassemia</label>
+    <select name="thal" id="thal" style="width: 100%; height: 34px;" required>
+  <option value="nor">Normal</option>
+  <option value="fd">Fixed Defect</option>
+  <option value="rd">Reversible Defect</option>
+</select>
+    </div>
+	</div><br>
+	<button type="submit" class="noselect button2 yellow" style="margin-left: 400px;"><a href="Houtputpositive.html" style="text-decoration: none; color: white;">Submit</a></button>
+</div>
+</div>
+</form>
+</div>
+</body>
+</html>
